@@ -2,7 +2,7 @@ FROM debian:stable-slim AS updates
 LABEL mantainer=”ctaffer@unsl.edu.ar”
 WORKDIR /root
 RUN apt update
-RUN apt install -y iproute2 net-tools telnet netcat iptables tcpdump iputils-ping openssh-client nano less
+RUN apt install -y iproute2 net-tools telnet netcat-traditional iptables tcpdump iputils-ping openssh-client nano less
 
 #set root pass
 RUN echo root:netOSLab | chpasswd
