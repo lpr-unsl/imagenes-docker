@@ -1,0 +1,15 @@
+FROM debian:stable-slim AS updates
+LABEL mantainer=”ctaffer@unsl.edu.ar”
+WORKDIR /root
+RUN apt update
+RUN apt install -y iproute2 net-tools telnet netcat-traditional iptables tcpdump rsyslog ethtool tcpdump iputils-ping vim nano less openssh-server openssh-client
+#set root pass
+RUN echo root:netOSLab | chpasswd
+#service 
+RUN apt install -y bind9 bind9-host
+COPY resources/named.conf.options /etc/bind/named.conf.options
+#en /etc/bind/named.conf.options modificado 
+    #listen-on { 127.0.0.1; };
+    #listen-on-v6 { ::1; };
+RUN apt autoremove
+
