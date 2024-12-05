@@ -25,4 +25,3 @@ RUN apt install -y \
   && rm -rf /var/lib/apt/lists/*
 
 RUN apt autoremove
-
