@@ -1,4 +1,4 @@
-FROM debian:stable-slim AS updates
+FROM debian:stable-slim
 LABEL mantainer=”ctaffer@unsl.edu.ar”
 WORKDIR /root
 RUN apt update

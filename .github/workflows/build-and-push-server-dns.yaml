@@ -1,16 +1,18 @@
-name: Router Docker Image Build CI
-
+#create a github action to build and push the server-dns docker image to the docker hub 
+name: DNS Server Docker Image Build CI
 on:
   push:
     branches:
     - master
+    paths:
+      - 'Dockerfile-servidor-dns'
 env:
   DOCKER_USER: ${{secrets.DOCKER_USER}}
   DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
   REPO_NAME: router
 jobs:
   build-and-push:
-    runs-on: ubuntu-18.04
+    runs-on: debian:stable-slim
     steps:
     - uses: actions/checkout@v3
     - name: docker login
@@ -19,10 +21,10 @@ jobs:
     - name: Get current date # get the date of the build
       id: date
       run: echo "::set-output name=date::$(date +'%Y-%m-%d--%M-%S')"
-    - name: Build ROUTER Docker image # push The image to the docker hub
-      run: docker build . --file Dockerfile-$REPO_NAME --tag $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
+    - name: Build DNS Server Docker image # push The image to the docker hub
+      run: docker build . --file Dockerfile-servidor-dns --tag $DOCKER_USER/netoslab-servidor-dns:${{ steps.date.outputs.date }}
     - name: Docker Push
-      run: docker push $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
+      run: docker push $DOCKER_USER/netoslab-servidor-dns:${{ steps.date.outputs.date }}
 #    - name: ver
 #      run: |
 #        docker images
