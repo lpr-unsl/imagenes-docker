@@ -1,14 +1,28 @@
-FROM debian:stable-slim AS updates
+FROM debian:stable-slim
 LABEL mantainer=”ctaffer@unsl.edu.ar”
 WORKDIR /root
-RUN apt update
-RUN apt install -y iproute2 net-tools telnet netcat-traditional iptables tcpdump rsyslog ethtool tcpdump iputils-ping vim nano less openssh-server openssh-client
+RUN apt update &&  apt install -y \
+  iproute2 \
+  net-tools \
+  telnet \
+  netcat-traditional \
+  iptables \
+  tcpdump \
+  rsyslog \
+  ethtool \
+  tcpdump \
+  iputils-ping \
+  vim \
+  nano \
+  less \
+  openssh-server \
+  openssh-client
 #set root pass
 RUN echo root:netOSLab | chpasswd
 #service 
-##http
-RUN apt install -y apache2
+RUN apt install -y \
+  apache2 \
+  && rm -rf /var/lib/apt/lists/*
 
-#set root pass
 RUN apt autoremove
 
