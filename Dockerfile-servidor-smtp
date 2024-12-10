@@ -32,5 +32,5 @@ RUN apt install -y \
 # saca la ultima linea
 #COPY resources/10-auth.conf  /etc/dovecot/conf.d/10-auth.conf
 # disable_plaintext_auth = no
-RUN apt autoremove
+RUN apt -y autoremove
 
