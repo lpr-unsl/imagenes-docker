@@ -25,12 +25,12 @@ RUN apt install -y \
   mutt \
   dovecot-pop3d \
   && rm -rf /var/lib/apt/lists/*
-#COPY resources/sendmail.mc /etc/mail/sendmail.mc
+COPY resources/sendmail.mc /etc/mail/sendmail.mc
 # FEATURE(accept_unqualified_senders)dnl
 # FEATURE(accept_unresolvable_domains)dnl
-#COPY resources/local-host-names /etc/mail/local-host-names
+COPY resources/local-host-names /etc/mail/local-host-names
 # saca la ultima linea
-#COPY resources/10-auth.conf  /etc/dovecot/conf.d/10-auth.conf
+COPY resources/10-auth.conf  /etc/dovecot/conf.d/10-auth.conf
 # disable_plaintext_auth = no
 RUN apt -y autoremove
 
