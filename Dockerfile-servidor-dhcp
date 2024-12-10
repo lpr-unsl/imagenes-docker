@@ -22,7 +22,8 @@ RUN echo root:netOSLab | chpasswd
 #service 
 RUN apt install -y \
   kea \
+  ipcalc \
   && rm -rf /var/lib/apt/lists/*
 
-RUN apt autoremove
+RUN apt -y autoremove
 
