@@ -23,5 +23,4 @@ RUN echo root:netOSLab | chpasswd
 RUN apt install -y \
   apache2 \
   && rm -rf /var/lib/apt/lists/*
-
-RUN apt autoremove
+COPY resources/ejemplo.mp3 /root
