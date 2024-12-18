@@ -1,0 +1,103 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 2 (0x2)
+    Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=KG, ST=NA, L=BISHKEK, O=OpenVPN-TEST/emailAddress=me@myhost.mydomain
+        Validity
+            Not Before: Nov 22 17:20:15 2024 GMT
+            Not After : Nov 20 17:20:15 2034 GMT
+        Subject: C=KG, ST=NA, O=OpenVPN-TEST, CN=Test-Client/emailAddress=me@myhost.mydomain
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:c2:20:29:b3:21:05:91:65:15:ec:e0:68:67:84:
+                    95:9b:2a:84:62:49:54:78:0d:88:2a:3c:10:95:63:
+                    b0:76:d1:53:06:ec:c8:9e:d0:7c:26:b8:c2:5d:5e:
+                    6d:0e:3e:bc:ce:3d:b8:a0:76:9b:46:33:b7:29:3b:
+                    fc:2d:c4:c1:8d:b5:d9:64:da:84:2d:42:a3:99:48:
+                    9e:10:bc:68:7e:aa:1d:67:e3:8f:62:3c:91:c4:fd:
+                    01:7b:61:0c:2d:2b:61:81:18:fd:ae:df:ba:94:62:
+                    96:b3:ed:d7:0b:da:a6:d2:51:8b:33:45:0f:5d:4e:
+                    1d:fb:d3:9f:d7:3b:3d:4c:3c:3c:e2:d4:5a:0a:53:
+                    5d:4d:64:88:62:fa:62:c7:b9:ea:0d:48:31:25:3d:
+                    59:f4:06:c5:88:0f:6f:87:1c:53:7f:37:7c:fd:fa:
+                    2c:03:d4:81:70:52:76:82:8a:9e:2a:aa:a0:46:dd:
+                    bd:1b:cf:d0:e4:57:c4:ed:c5:8b:49:65:39:cc:0e:
+                    7d:20:63:18:fe:61:bb:af:9d:a1:08:80:fc:74:7f:
+                    17:45:50:07:8e:2a:36:55:43:9e:3f:d1:2a:53:94:
+                    76:74:69:c0:0b:ed:63:c0:37:54:b9:4b:86:8d:e3:
+                    23:63:28:28:3e:87:0d:2d:65:77:b6:43:96:d0:29:
+                    ea:23
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                38:83:89:3F:C6:82:63:22:EB:94:BF:E7:B2:70:25:67:A3:95:16:80
+            X509v3 Authority Key Identifier: 
+                keyid:97:6C:A9:86:67:10:53:A7:C2:09:BC:21:C6:DE:38:FB:A4:31:58:B2
+                DirName:/C=KG/ST=NA/L=BISHKEK/O=OpenVPN-TEST/emailAddress=me@myhost.mydomain
+                serial:FD:25:7B:E3:08:51:A4:C1
+
+    Signature Algorithm: sha256WithRSAEncryption
+         9e:d9:12:fb:b2:d9:6a:02:a3:72:f1:4e:3e:97:91:8d:7b:09:
+         22:8b:19:ac:27:cc:64:3b:81:d2:bc:a5:fa:43:c1:5d:9f:0f:
+         d4:ce:55:9c:d4:2b:c6:ae:e2:c3:72:0c:62:74:1a:9e:59:4f:
+         08:c6:97:7b:3c:74:d7:03:8a:9d:e6:56:73:13:a4:65:9a:e8:
+         09:ab:93:ca:97:03:cf:c6:07:d2:0b:fe:7b:6d:37:fc:0f:ff:
+         52:88:f1:f6:1d:ec:89:09:80:a5:3e:89:c5:a5:21:a7:f9:81:
+         b7:ed:51:0e:f2:b9:f6:3e:8b:c6:1a:69:b8:ed:b0:a1:cc:c5:
+         26:75:5e:e5:62:75:c9:b1:f8:7b:bb:0a:64:53:e2:8f:46:be:
+         b1:a0:06:56:6c:cb:22:7b:80:a8:ee:58:03:e5:0b:65:f0:ba:
+         2c:4c:2c:7e:27:ed:38:79:66:d6:55:b7:9b:44:fb:da:2b:9b:
+         76:ba:89:c0:7f:2c:fa:6c:85:c6:b6:82:0c:d4:ca:52:f6:95:
+         cc:99:c5:8f:64:aa:c3:0e:99:43:c9:1a:a4:c4:9c:6f:1e:26:
+         e9:d8:77:0e:06:67:2a:d8:d1:de:1b:3c:c2:36:eb:b0:1f:12:
+         f3:9e:21:3f:6b:22:28:0f:64:45:8a:e8:78:cf:42:8d:6e:db:
+         a8:8f:d8:a7:f9:7d:4d:20:6d:1a:4b:56:62:84:22:1f:52:1a:
+         e9:b2:e9:e0:e6:71:64:09:af:c3:1b:f9:f2:a1:31:6a:43:8a:
+         ea:68:f3:c9:14:cc:d5:a5:73:af:32:72:76:76:45:3e:2b:b2:
+         d0:70:b7:c5:97:fe:4c:a6:8e:66:86:70:3b:92:7f:6f:8e:b6:
+         4b:9a:1f:f9:ba:66:df:a7:4e:7b:4b:b1:f8:c4:7f:15:ec:40:
+         9e:a6:e1:2e:0f:ab:29:39:3d:6a:b1:20:e5:ca:7f:aa:ce:a4:
+         ab:b1:3f:1e:57:cf:5f:9d:35:60:fd:51:cf:4f:a4:60:0d:ef:
+         13:a2:3e:1f:cb:98:3c:ce:d3:7b:27:00:af:9c:05:da:27:3b:
+         16:52:9b:36:b9:40:04:bf:5e:81:62:22:33:ed:4d:52:42:8d:
+         bb:db:e5:6b:95:30:3d:bd:8b:62:8d:4c:87:27:72:72:94:72:
+         3e:68:b1:58:7b:66:35:81:16:19:df:72:ab:e3:4f:c5:8f:f7:
+         71:54:14:70:b0:9e:eb:4d:12:c3:f2:ff:c7:dc:ad:c1:5b:e4:
+         85:08:fe:32:3d:53:91:b4:49:7f:cd:90:fd:cb:d6:91:af:d3:
+         6b:22:5c:22:47:31:d9:ca:c9:9a:7b:84:89:98:d1:4c:99:85:
+         e0:78:a9:21:e0:a7:04:14
+-----BEGIN CERTIFICATE-----
+MIIFFDCCAvygAwIBAgIBAjANBgkqhkiG9w0BAQsFADBmMQswCQYDVQQGEwJLRzEL
+MAkGA1UECAwCTkExEDAOBgNVBAcMB0JJU0hLRUsxFTATBgNVBAoMDE9wZW5WUE4t
+VEVTVDEhMB8GCSqGSIb3DQEJARYSbWVAbXlob3N0Lm15ZG9tYWluMB4XDTI0MTEy
+MjE3MjAxNVoXDTM0MTEyMDE3MjAxNVowajELMAkGA1UEBhMCS0cxCzAJBgNVBAgM
+Ak5BMRUwEwYDVQQKDAxPcGVuVlBOLVRFU1QxFDASBgNVBAMMC1Rlc3QtQ2xpZW50
+MSEwHwYJKoZIhvcNAQkBFhJtZUBteWhvc3QubXlkb21haW4wggEiMA0GCSqGSIb3
+DQEBAQUAA4IBDwAwggEKAoIBAQDCICmzIQWRZRXs4GhnhJWbKoRiSVR4DYgqPBCV
+Y7B20VMG7Mie0HwmuMJdXm0OPrzOPbigdptGM7cpO/wtxMGNtdlk2oQtQqOZSJ4Q
+vGh+qh1n449iPJHE/QF7YQwtK2GBGP2u37qUYpaz7dcL2qbSUYszRQ9dTh3705/X
+Oz1MPDzi1FoKU11NZIhi+mLHueoNSDElPVn0BsWID2+HHFN/N3z9+iwD1IFwUnaC
+ip4qqqBG3b0bz9DkV8TtxYtJZTnMDn0gYxj+YbuvnaEIgPx0fxdFUAeOKjZVQ54/
+0SpTlHZ0acAL7WPAN1S5S4aN4yNjKCg+hw0tZXe2Q5bQKeojAgMBAAGjgcgwgcUw
+CQYDVR0TBAIwADAdBgNVHQ4EFgQUOIOJP8aCYyLrlL/nsnAlZ6OVFoAwgZgGA1Ud
+IwSBkDCBjYAUl2yphmcQU6fCCbwhxt44+6QxWLKhaqRoMGYxCzAJBgNVBAYTAktH
+MQswCQYDVQQIDAJOQTEQMA4GA1UEBwwHQklTSEtFSzEVMBMGA1UECgwMT3BlblZQ
+Ti1URVNUMSEwHwYJKoZIhvcNAQkBFhJtZUBteWhvc3QubXlkb21haW6CCQD9JXvj
+CFGkwTANBgkqhkiG9w0BAQsFAAOCAgEAntkS+7LZagKjcvFOPpeRjXsJIosZrCfM
+ZDuB0ryl+kPBXZ8P1M5VnNQrxq7iw3IMYnQanllPCMaXezx01wOKneZWcxOkZZro
+CauTypcDz8YH0gv+e203/A//Uojx9h3siQmApT6JxaUhp/mBt+1RDvK59j6Lxhpp
+uO2woczFJnVe5WJ1ybH4e7sKZFPij0a+saAGVmzLInuAqO5YA+ULZfC6LEwsfift
+OHlm1lW3m0T72iubdrqJwH8s+myFxraCDNTKUvaVzJnFj2Sqww6ZQ8kapMScbx4m
+6dh3DgZnKtjR3hs8wjbrsB8S854hP2siKA9kRYroeM9CjW7bqI/Yp/l9TSBtGktW
+YoQiH1Ia6bLp4OZxZAmvwxv58qExakOK6mjzyRTM1aVzrzJydnZFPiuy0HC3xZf+
+TKaOZoZwO5J/b462S5of+bpm36dOe0ux+MR/FexAnqbhLg+rKTk9arEg5cp/qs6k
+q7E/HlfPX501YP1Rz0+kYA3vE6I+H8uYPM7TeycAr5wF2ic7FlKbNrlABL9egWIi
+M+1NUkKNu9vla5UwPb2LYo1MhydycpRyPmixWHtmNYEWGd9yq+NPxY/3cVQUcLCe
+600Sw/L/x9ytwVvkhQj+Mj1TkbRJf82Q/cvWka/TayJcIkcx2crJmnuEiZjRTJmF
+4HipIeCnBBQ=
+-----END CERTIFICATE-----
