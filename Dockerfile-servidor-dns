@@ -28,5 +28,5 @@ COPY resources/named.conf.options /etc/bind/named.conf.options
 #en /etc/bind/named.conf.options modificado 
     #listen-on { 127.0.0.1; };
     #listen-on-v6 { ::1; };
-RUN apt autoremove
+RUN apt -y autoremove
 
