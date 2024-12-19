@@ -1,0 +1,25 @@
+#create a github action to build and push the server-dns docker image to the docker hub 
+name: VPN Server Docker Image Build CI
+on:
+  push:
+    branches:
+    - master
+env:
+  REPO_NAME: netoslab-servidor-vpn
+jobs:
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+        with:
+          repository: imagenes-docker
+          ref: refs/heads/master
+      - name: Patch image tag
+        run: |
+          sed -i'' "s^docker[[:blank:]]login*^docker logon^" README.md
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -a -m "GitHub Action Auto-update dev to image ${{needs.docker.outputs.named_image_tag}}"
+          git push
