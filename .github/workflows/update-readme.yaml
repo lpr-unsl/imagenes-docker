@@ -18,9 +18,10 @@ jobs:
           ref: refs/heads/master
       - name: Patch image tag
         run: |
-          echo "GITHUB_ORG=$(echo ${GITHUB_REPOSITORY } | cut -d / -f 1)" >> $GITHUB_ENV
-          echo "GITHUB_REPO=$(echo ${GITHUB_REPOSITORY } | cut -d / -f 2)" >> $GITHUB_ENV
-          echo "CONFIG_REPO=$(echo ${GITHUB_REPO }-config" >> $GITHUB_ENV
+          echo ${GITHUB_REPOSITORY} 
+          echo "GITHUB_ORG=$(echo ${GITHUB_REPOSITORY} | cut -d / -f 1)" >> $GITHUB_ENV
+          echo "GITHUB_REPO=$(echo ${GITHUB_REPOSITORY} | cut -d / -f 2)" >> $GITHUB_ENV
+          echo "CONFIG_REPO=$(echo ${GITHUB_REPO}-config" >> $GITHUB_ENV
           echo $GITHUB_ENV
           sed -i'' "s^docker[[:blank:]]login*^docker logon^" README.md
           git config user.name github-actions
