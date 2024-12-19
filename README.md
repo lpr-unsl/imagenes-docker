@@ -21,7 +21,7 @@
  - If everything is ok, create a new tag for the image and push it to dockerhub registry:
    - NOTE: you need to log in in dockerhub with sistemasoperativostur user
 ```
-     docker login
+     docker logon
      docker tag sistemasoperativostur/netoslab-[image]:[version] sistemasoperativostur/netoslab-[image]:latest
      docker push sistemasoperativostur/netoslab-[image]:latest
   ```
