@@ -25,3 +25,4 @@ RUN apt install -y \
   && rm -rf /var/lib/apt/lists/*
 COPY resources/nsswitch.conf /etc/nsswitch.conf
 RUN apt -y autoremove
+
