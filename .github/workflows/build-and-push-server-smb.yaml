@@ -1,0 +1,32 @@
+#create a github action to build and push the server-dns docker image to the docker hub 
+name: SMB Server Docker Image Build CI
+on:
+  push:
+    branches:
+    - master
+    paths:
+      - 'Dockerfile-servidor-smb'
+env:
+  DOCKER_USER: ${{secrets.DOCKER_USER}}
+  DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+  REPO_NAME: netoslab-servidor-smb
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: docker login
+      run: | # log into docker hub account
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD  
+    - name: Get current date # get the date of the build
+      id: date
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d-%H-%M-%S')"
+    - name: Build SMTP Server Docker image # push The image to the docker hub
+      run: docker build . --file Dockerfile-servidor-smb --tag $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
+    - name: Docker Push
+      run: docker push $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
+#    - name: ver
+#      run: |
+#        docker images
+#        echo $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
+
