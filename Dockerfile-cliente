@@ -1,0 +1,40 @@
+FROM debian:stable-slim
+LABEL mantainer=”ctaffer@unsl.edu.ar”
+WORKDIR /root
+RUN apt update &&  apt install -y \
+  iproute2 \
+  net-tools \
+  telnet \
+  netcat-traditional \
+  iptables \
+  tcpdump \
+  rsyslog \
+  ethtool \
+  tcpdump \
+  iputils-ping \
+  vim \
+  nano \
+  less \
+  openssh-server \
+  openssh-client
+#set root pass
+RUN echo root:netOSLab | chpasswd
+#service 
+RUN apt install -y \
+  elinks \
+  curl \
+  smbclient \
+  cif-utils \
+  bind9-host \
+  isc-dhcp-client \
+  dillo \
+  claws-mail 
+  && rm -rf /var/lib/apt/lists/*
+
+#crear archivo /etc/dhcp/dhclient-exit-hooks.d/mv
+#crear archivo /etc/dhcp/dhclient-enter-hooks.d/mv
+#permisos ejecucion, ambos contenidos
+#    #!/bin/bash
+#    ORIGEN=`ls -t /etc/resolv.conf* | head -n1`
+#    cp $ORIGEN /etc/resolv.conf
+#copiar un par de archivos pdf, mp3 o png en /root
