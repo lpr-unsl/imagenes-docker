@@ -6,4 +6,19 @@ RUN apt install -y iproute2 net-tools telnet netcat-traditional iptables tcpdump
 
 #set root pass
 RUN echo root:netOSLab | chpasswd
-RUN apt autoremove
+RUN apt autoremove -y
+CMD ["/bin/bash"]
+
+# Difference between CMD and ENTRYPOINT
+#$ docker inspect -f '{{.Config.Entrypoint}}'  python:latest
+#[]
+#$ docker inspect -f '{{.Config.Cmd}}'  python:latest
+#[python3]
+#$ docker run -it --rm --entrypoint python3 python:latest
+#Python 3.13.1 (main, Jan 14 2025, 05:25:12) [GCC 12.2.0] on linux
+#Type "help", "copyright", "credits" or "license" for more information.
+#>>>
+#$ docker run -it --rm --entrypoint python3 python:latest "--version"
+#Python 3.13.1
+#$
+#
