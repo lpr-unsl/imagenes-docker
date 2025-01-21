@@ -21,4 +21,3 @@ CMD ["/bin/bash"]
 #$ docker run -it --rm --entrypoint python3 python:latest "--version"
 #Python 3.13.1
 #$
-#
