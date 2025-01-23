@@ -1,8 +1,13 @@
 FROM sistemasoperativostur/netoslab-router:latest
+LABEL mantainer=”ctaffer@unsl.edu.ar”
+WORKDIR /root
 #DHCP service
 RUN apt update \
     && apt install -y \
        kea \
        ipcalc \
-    && mkdir -p /var/run/kea
+    && mkdir -p /var/run/kea \
+    && apt clean \
+    && apt -y autoremove \
+    && rm -rf /var/lib/apt/lists/*
 CMD ["/bin/bash"]
