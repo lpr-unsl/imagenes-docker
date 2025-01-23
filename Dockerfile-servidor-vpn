@@ -1,29 +1,13 @@
-FROM debian:stable-slim
+FROM sistemasoperativostur/netoslab-router:latest
 LABEL mantainer=”ctaffer@unsl.edu.ar”
 WORKDIR /root
-RUN apt update &&  apt install -y \
-  iproute2 \
-  net-tools \
-  telnet \
-  netcat-traditional \
-  iptables \
-  tcpdump \
-  rsyslog \
-  ethtool \
-  tcpdump \
-  iputils-ping \
-  vim \
-  nano \
-  less \
-  openssh-server \
-  openssh-client 
-#set root pass
-RUN echo root:netOSLab | chpasswd
-#service 
-RUN apt install -y \
-  openvpn \
-  && rm -rf /var/lib/apt/lists/*
-#COPY resources/named.conf.options /etc/bind/named.conf.options
+#openvpn service
+RUN apt update \
+    && apt install -y \
+       openvpn \
+    && apt clean \
+    && apt -y autoremove \
+    && rm -rf /var/lib/apt/lists/*
 COPY resources/sample-config-files/server.conf /etc/openvpn
 COPY resources/sample-config-files/client.conf /etc/openvpn
 COPY resources/sample-keys/ca.crt /etc/openvpn
@@ -33,5 +17,4 @@ COPY resources/sample-keys/server.key /etc/openvpn
 COPY resources/sample-keys/client.crt /etc/openvpn
 COPY resources/sample-keys/client.key /etc/openvpn
 COPY resources/sample-keys/dh2048.pem /etc/openvpn
-RUN apt -y autoremove
-
+CMD ["/bin/bash"]
