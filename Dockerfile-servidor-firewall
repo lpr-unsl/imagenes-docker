@@ -1,26 +1,11 @@
-FROM debian:stable-slim
+FROM sistemasoperativostur/netoslab-router:latest
 LABEL mantainer=”ctaffer@unsl.edu.ar”
 WORKDIR /root
-RUN apt update &&  apt install -y \
-  iproute2 \
-  net-tools \
-  telnet \
-  netcat-traditional \
-  iptables \
-  tcpdump \
-  rsyslog \
-  ethtool \
-  tcpdump \
-  iputils-ping \
-  vim \
-  nano \
-  less \
-  openssh-server \
-  openssh-client
-#set root pass
-RUN echo root:netOSLab | chpasswd
-#service - only apache2 to test traffic filters
-RUN apt install -y \
-  apache2 \
-  && rm -rf /var/lib/apt/lists/*
-RUN apt -y autoremove
+#Firewall service - only apache2 to test traffic filters
+RUN apt update \
+    && apt install -y \
+       apache2 \
+    && apt clean \
+    && apt -y autoremove \
+    && rm -rf /var/lib/apt/lists/*
+CMD ["/bin/bash"]
