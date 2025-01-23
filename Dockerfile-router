@@ -1,12 +1,26 @@
 FROM debian:stable-slim AS updates
 LABEL mantainer=”ctaffer@unsl.edu.ar”
 WORKDIR /root
-RUN apt update
-RUN apt install -y iproute2 net-tools telnet netcat-traditional iptables tcpdump iputils-ping openssh-client nano less
-
-#set root pass
-RUN echo root:netOSLab | chpasswd
-RUN apt autoremove -y
+RUN apt update && \
+    apt install -y \
+      iproute2 \
+      net-tools \
+      telnet \
+      netcat-traditional \
+      iptables \
+      tcpdump \
+      ethtool \
+      rsyslog \
+      iputils-ping \
+      vim \
+      nano \
+      less \
+      openssh-server \
+      openssh-client \
+    && apt clean \
+    && apt -y autoremove \
+    && rm -rf /var/lib/apt/lists/* \
+    && echo root:netOSLab | chpasswd #set root pass
 CMD ["/bin/bash"]
 
 # Difference between CMD and ENTRYPOINT
