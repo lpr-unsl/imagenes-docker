@@ -14,6 +14,7 @@ COPY resources/sendmail.mc /etc/mail/sendmail.mc
 # FEATURE(accept_unqualified_senders)dnl
 # FEATURE(accept_unresolvable_domains)dnl
 COPY resources/local-host-names /etc/mail/local-host-names
+COPY resources/nsswitch.conf /etc/nsswitch.conf
 # saca la ultima linea
 COPY resources/10-auth.conf  /etc/dovecot/conf.d/10-auth.conf
 # disable_plaintext_auth = no
