@@ -30,11 +30,18 @@ jobs:
 #bb#        docker images
 #bb#        echo $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
 #bb
-    - name: Get tag
+    - name: get tag
+      id: tag
       if: github.ref == 'refs/heads/master'
-      id: date
       run: |
-        echo "::set-output name=date::latest"
+        echo "version=latest" >> $GITHUB_OUTPUT
         echo $GITHUB_REF
-        echo ${{ steps.date.outputs.date }}
+        echo ${{ steps.tag.outputs.version }}
   
+    - name: get date
+      id: date
+      if: github.ref != 'refs/heads/master'
+      run: |
+        echo "version=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_OUTPUT
+        echo $GITHUB_REF
+        echo ${{ steps.tag.outputs.version }}
