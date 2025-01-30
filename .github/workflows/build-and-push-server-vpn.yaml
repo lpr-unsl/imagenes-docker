@@ -44,4 +44,5 @@ jobs:
         echo "version=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_OUTPUT
         echo $GITHUB_REF
     - name: show tag
+      run: |
         echo "${{ steps.tag.outputs.version }}"
