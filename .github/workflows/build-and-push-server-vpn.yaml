@@ -36,5 +36,5 @@ jobs:
       run: |
         echo "::set-output name=date::latest"
         echo $GITHUB_REF
-        echo ${{ steps.date.outputs.date }}
+        echo ${{ date.outputs.date }}
   
