@@ -32,5 +32,8 @@ jobs:
 #bb
     - name: Get tag
       if: github.ref == 'refs/heads/master'
+      id: date
+      run: echo "::set-output name=date::latest"
       run: echo $GITHUB_REF
+      run: echo ${{ steps.date.outputs.date }}
   
