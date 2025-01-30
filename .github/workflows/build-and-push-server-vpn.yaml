@@ -30,5 +30,7 @@ jobs:
 #bb#        docker images
 #bb#        echo $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
 #bb
-    - name: Get github ref name
+    - name: Get tag
+      if: github.ref == 'refs/heads/master'
       run: echo $GITHUB_REF
+  
