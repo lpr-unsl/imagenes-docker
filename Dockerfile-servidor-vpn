@@ -8,13 +8,6 @@ RUN apt update \
     && apt clean \
     && apt -y autoremove \
     && rm -rf /var/lib/apt/lists/*
-COPY resources/sample-config-files/server.conf /etc/openvpn
-COPY resources/sample-config-files/client.conf /etc/openvpn
-COPY resources/sample-keys/ca.crt /etc/openvpn
-COPY resources/sample-keys/ta.key /etc/openvpn
-COPY resources/sample-keys/server.crt /etc/openvpn
-COPY resources/sample-keys/server.key /etc/openvpn
-COPY resources/sample-keys/client.crt /etc/openvpn
-COPY resources/sample-keys/client.key /etc/openvpn
-COPY resources/sample-keys/dh2048.pem /etc/openvpn
+COPY resources/sample-config-files/* /etc/openvpn
+COPY resources/sample-keys/* /etc/openvpn
 CMD ["/bin/bash"]
