@@ -32,17 +32,14 @@ jobs:
 #bb
     - name: get tag
       id: tag
-      if: github.ref == 'refs/heads/master'
+      #      if: github.ref == 'refs/heads/master'
       run: |
-        echo "version=latest" >> $GITHUB_OUTPUT
-        echo $GITHUB_REF
+        if [ $GITHUB_REF == 'refs/heads/master' ] ; then 
+          echo "version=latest">> $GITHUB_OUTPUT
+        else
+          echo "version=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_OUTPUT
+        fi
   
-    - name: get date
-      id: date
-      if: github.ref != 'refs/heads/master'
-      run: |
-        echo "version=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_OUTPUT
-        echo $GITHUB_REF
     - name: show tag
       run: |
         echo "${{ steps.tag.outputs.version }}"
