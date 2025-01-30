@@ -18,15 +18,17 @@ jobs:
     - name: docker login
       run: | # log into docker hub account
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD  
-    - name: Get current date # get the date of the build
-      id: date
-      run: echo "::set-output name=date::$(date +'%Y-%m-%d-%H-%M-%S')"
-    - name: Build VPN Server Docker image # push The image to the docker hub
-      run: docker build . --file Dockerfile-servidor-vpn --tag $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
-    - name: Docker Push
-      run: docker push $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
-#    - name: ver
-#      run: |
-#        docker images
-#        echo $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
-
+#bb    - name: Get current date # get the date of the build
+#bb      id: date
+#bb      run: echo "::set-output name=date::$(date +'%Y-%m-%d-%H-%M-%S')"
+#bb    - name: Build VPN Server Docker image # push The image to the docker hub
+#bb      run: docker build . --file Dockerfile-servidor-vpn --tag $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
+#bb    - name: Docker Push
+#bb      run: docker push $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
+#bb#    - name: ver
+#bb#      run: |
+#bb#        docker images
+#bb#        echo $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
+#bb
+    - name: Get github ref name
+      run: echo $GITHUB_REF
