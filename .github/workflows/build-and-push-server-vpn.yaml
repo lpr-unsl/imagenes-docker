@@ -36,7 +36,6 @@ jobs:
       run: |
         echo "version=latest" >> $GITHUB_OUTPUT
         echo $GITHUB_REF
-        echo ${{ steps.tag.outputs.version }}
   
     - name: get date
       id: date
@@ -44,4 +43,5 @@ jobs:
       run: |
         echo "version=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_OUTPUT
         echo $GITHUB_REF
-        echo ${{ steps.tag.outputs.version }}
+    - name: show tag
+        echo "${{ steps.tag.outputs.version }}"
