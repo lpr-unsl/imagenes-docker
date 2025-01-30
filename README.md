@@ -1,11 +1,16 @@
 # This Repo is for build docker images used by netOSLAB project.
 ## Steps to update the docker image:
+ - Create a new branch (e.g. develop)
+``` 
+     git checkout -b develop
+```
+ 
  - Change/update with new features Dockerfile-[image]
  - commit the changes to github
  ```
      git add Dockerfile-[image]
      git commit -m "update [image] with new features"
-     git push origin master
+     git push --set-upstream origin develop
 ```
  - Github actions will auto built and push new [image] version to dockerhub.
    - Check the status of the build at https://github.com/lpr-unsl/imagenes-docker/actions
@@ -18,11 +23,11 @@
      test ....
      exit
 ```
- - If everything is ok, create a new tag for the image and push it to dockerhub registry:
-   - NOTE: you need to log in in dockerhub with sistemasoperativostur user
-```
-     docker login
-     docker tag sistemasoperativostur/netoslab-[image]:[version] sistemasoperativostur/netoslab-[image]:latest
-     docker push sistemasoperativostur/netoslab-[image]:latest
-  ```
-- **latest** tag is used by netOSLab to pull images
+ - If everything is ok, got to github repo web page, and:
+   - click "Compare & Pull request" button
+   - add a description of the changes
+   - click "Create pull request" button
+   - wait for the review and merge
+   - then click "Confirm merge" button AND "Delete branch" button
+   
+- Then github actions will create and push **latest** tag netOSLab image to dockerhub.
