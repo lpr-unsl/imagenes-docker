@@ -31,7 +31,7 @@
    - then click "Confirm merge" button AND "Delete branch" button
    
 - Then github actions will create and push **latest** tag netOSLab image to dockerhub.
-- Finally, you can delete the local branch
+- Finally, you can delete the local develop branch
 ```
      git checkout master
      git branch -d develop
