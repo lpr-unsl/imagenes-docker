@@ -33,6 +33,6 @@
 - Then github actions will create and push **latest** tag netOSLab image to dockerhub.
 - Finally, you can delete the local branch
 ```
-     git checkout main
+     git checkout master
      git branch -d develop
 ```
