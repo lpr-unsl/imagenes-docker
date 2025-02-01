@@ -12,3 +12,4 @@ RUN apt update \
 COPY resources/sample-config-files/* /etc/openvpn
 COPY resources/sample-keys/* /etc/openvpn
 CMD ["/bin/bash"]
+
