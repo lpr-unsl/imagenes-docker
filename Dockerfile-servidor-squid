@@ -10,4 +10,5 @@ RUN apt update \
     && apt -y autoremove \
     && rm -rf /var/lib/apt/lists/*
 COPY resources/nsswitch.conf /etc/nsswitch.conf
+COPY resources/ejemplo.mp3 /root
 CMD ["/bin/bash"]
